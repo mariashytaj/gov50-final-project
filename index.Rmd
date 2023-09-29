@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to immigration, and the effect of the implementation of certain immigration laws/policies on immigration numbers. 
+I am interested in exploring data related to immigration, and the effect of the implementation of certain immigration laws/policies on immigration numbers. What laws/policies caused an increase in the number of immigrants entering US every year? What laws/policies caused a decrease on those numbers? These are the questions I want to research and answer through this final project.
