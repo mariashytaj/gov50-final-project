@@ -11,7 +11,35 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to immigration, and the effect of immigration in the US economy. Does the increase in immigration correlate to an increase in labour producitivity whihc ultimately helps the US economy?
+I am interested in exploring data related to immigration, and the effect of immigration in the US economy. Does the increase in immigration correlate to an increase in labor productivity which ultimately helps the US economy?
  These are the questions I want to research and answer through this final project.
 
-##MileStone 2
+## MileStone 2
+
+Does immigration effect labor productivity?
+I hypothesize that an increase in the number of immigrants that enter the US leads to an increase in the labor productivity of our country which ultimately leads to a positive impact on the US economy.
+My thought process behind my claim: There are many reasons why people choose to immigrate to The United States of America. One of the main reasons is for more job/work opportunities. As more immigrants enter the US and get employed ultimately the labor productivity of the country increases. An increase in labor productivity positively impacts the US economy therefor an increase in the number of immigrants that enter the country ultimately and positively effects the US economy.
+The variables that I will be working with is the increase in number of (immigrants) in the US population and the values of the US labor productivity.
+My data for the number of immigrants in the US population through many years comes from "https://www.migrationpolicy.org/programs/data-hub/charts/immigrant-population-over-time".
+My data for labur productivety throughout the years comes from "https://www.epi.org/productivity-pay-gap/#:~:text=From%201979%20to%202020%2C%20net,(after%20adjusting%20for%20inflation).".
+My explanatory variable of interest is the change/increase in the immigrant population of the US throughout the years. My outcome variable of interest is the change(to prove my hypothesis I want this change to be positive) in the US labor productivity as the immigration population in the US increases.
+I will be comparing these variables throughout many years to see if there is a positive correlation present and prove my hypothesis. If there isn't a correlation between the data that I will be exploring or if the correlation inst positive, my thesis would be disproved. 
+
+```{r}
+library(tidyverse)
+data <- read.csv("Book1.csv")
+colnames(data) <- c("Year","NumOfImmigrants","Immigrants%OfUSpop.")
+
+data
+```
+```{r}
+library(ggplot2)
+ggplot(data, aes(x = Year, y = NumOfImmigrants)) +
+  geom_point() +
+  labs(x = "Year", y = "Number of Immigrants") +
+  ggtitle("Number of Immigrants Over Time")
+
+```
+
+=
+

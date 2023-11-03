@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["Book1.csv","Book1.numbers","Book3.csv","Dataset.csv","Dataset.xlsx","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1529,8 +1529,55 @@ My data for the number of immigrants in the US population through many years com
 My data for labur productivety throughout the years comes from “<a href="https://www.epi.org/productivity-pay-gap/#" class="uri">https://www.epi.org/productivity-pay-gap/#</a>:~:text=From%201979%20to%202020%2C%20net,(after%20adjusting%20for%20inflation).”.
 My explanatory variable of interest is the change/increase in the immigrant population of the US throughout the years. My outcome variable of interest is the change(to prove my hypothesis I want this change to be positive) in the US labor productivity as the immigration population in the US increases.
 I will be comparing these variables throughout many years to see if there is a positive correlation present and prove my hypothesis. If there isn’t a correlation between the data that I will be exploring or if the correlation inst positive, my thesis would be disproved.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"Book1.csv"</span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Year"</span>,<span class='st'>"NumOfImmigrants"</span>,<span class='st'>"Immigrants%OfUSpop."</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>data</span></span></code></pre>
+</div>
+<pre><code>   Year NumOfImmigrants Immigrants%OfUSpop.
+1  1850       2,244,600                 9.7
+2  1860       4,138,700                13.2
+3  1870       5,567,200                14.4
+4  1880       6,679,900                13.3
+5  1890       9,249,500                14.8
+6  1900      10,341,300                13.6
+7  1910      13,515,900                14.7
+8  1920      13,920,700                13.2
+9  1930      14,204,100                11.6
+10 1940      11,594,900                 8.8
+11 1950      10,347,400                 6.9
+12 1960       9,738,100                 5.4
+13 1970       9,619,300                 4.7
+14 1980      14,079,900                 6.2
+15 1990      19,767,300                 7.9
+16 2000      31,107,900                11.1
+17 2010      39,955,900                12.9
+18 2011      40,377,900                13.0
+19 2012      40,824,700                13.0
+20 2013      41,348,100                13.1
+21 2014      42,391,800                13.3
+22 2015      43,290,400                13.5
+23 2016      43,739,300                13.5
+24 2017      44,525,900                13.7
+25 2018      44,728,700                13.7
+26 2019      44,932,900                13.7
+27 2021      45,270,100                13.6</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>data</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Year</span>, y <span class='op'>=</span> <span class='va'>NumOfImmigrants</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, y <span class='op'>=</span> <span class='st'>"Number of Immigrants"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ggtitle</a></span><span class='op'>(</span><span class='st'>"Number of Immigrants Over Time"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
 <p>=</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
