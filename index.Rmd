@@ -86,6 +86,7 @@ It is measured by dividing the total output (the total quantity or value of good
 ## Results
 
 ```{r}
+library(DT)
 merged_data <- merge(Book12, Book10, by = "Year")
 
 datatable(merged_data, options = list(scrollY = "300px"))
@@ -108,10 +109,19 @@ The steepness and the positive slope suggest a strong positive relationship betw
 ```{r}
 reg_model <- lm(EffectiveTEP ~ U.S_pop, data = merged_data)
 
-modelsummary::modelsummary(reg_model,
-                           statistic = c("s.e. = {std.error}",
-                                         "p = {p.value}"),
-                           gof_map = c("nobs", "r.squared", "adj.r.squared", "min.residual", "max.residual"))
+residuals <- resid(reg_model)
+min_residual <- min(residuals)
+max_residual <- max(residuals)
+
+summary_table <- modelsummary::modelsummary(
+  reg_model,
+  statistic = c("s.e. = {std.error}",
+                "p = {p.value}",
+                "min residual = {min_residual}",
+                "max residual = {max_residual}"),
+  gof_map = c("nobs", "r.squared", "adj.r.squared")
+)
+summary_table
 ```
 
 ### Interpreting the regression model
@@ -124,11 +134,11 @@ Interpreting the output above:
 -   Estimated coefficient: The estimated coefficient for the US Population is 6.143e-07.
     This represents the estimated change in effective TEP (labor productivity) for one unit increase in the US population
 
--   P-value: Based on the very small p-value(<2e-16) we can say that both the intercept and the coefficient explained above are statistically significant
+-   P-value: Based on the very small p-value(<1e−05) we can say that both the intercept and the coefficient explained above are statistically significant
 
 -   Residuals: Min residual is roughly -5.93 and max is 8.32 meaning there is variability in the predicted values.
 
--   R-squared: Multiple R-squared: 0.9916, Adjusted R-squared: 0.9915 as shown by the values above the value of R squared is very high meaning it explains about 99.16% of the variance in effective TEP values.
+-   R-squared: Multiple R-squared: 0.992, Adjusted R-squared: 0.991 as shown by the values above the value of R squared is very high meaning it explains about 99.16% of the variance in effective TEP values.
 
 ## Conclusion
 
