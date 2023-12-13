@@ -40,8 +40,6 @@ Book10 <- read.csv("book10.csv")
 colnames(Book10) <- c("Year", "U.S_pop")
 
 datatable(Book10, options = list(scrollY = "300px"))
-
-
 ```
 
 ```{r}
@@ -62,6 +60,7 @@ There are no obvious outliers present therefore we can come to the overall concl
 
 ```{r}
 library(tidyverse)
+library(DT)
 Book12 <- read.csv("Book12.csv")
 Book12 <- subset(Book12, select = -X)
 colnames(Book12) <- c("Year","EffectiveTEP")
