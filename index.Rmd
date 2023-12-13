@@ -34,7 +34,7 @@ library(tidyverse)
 Book10 <- read.csv("book10.csv")
 colnames(Book10) <- c("Year", "U.S_pop")
 
-knitr::kable(Book10)
+knitr::kable(head(Book10))
 ```
 
 ```{r}
@@ -59,7 +59,7 @@ Book12 <- read.csv("Book12.csv")
 Book12 <- subset(Book12, select = -X)
 colnames(Book12) <- c("Year","EffectiveTEP")
 
-knitr::kable(Book12)
+knitr::kable(head(Book12))
 ```
 
 ```{r}
@@ -82,14 +82,14 @@ It is measured by dividing the total output (the total quantity or value of good
 ```{r}
 merged_data <- merge(Book12, Book10, by = "Year")
 
-knitr::kable(merged_data)
+knitr::kable(head(merged_data))
 ```
 
 ```{r}
 library(ggplot2)
 ggplot(merged_data, aes(x = U.S_pop, y = EffectiveTEP)) +
   geom_point() + 
-  geom_smooth(method = "lm", se = FALSE, color = "blue", formula = y ~ x) + 
+  geom_smooth(method = "lm", se = FALSE, color = "red", formula = y ~ x) + 
   labs(title = "Scatter Plot with Linear Regression Line",
        x = "U.S. Population",
        y = "Effective TEP")
@@ -116,7 +116,7 @@ Interpreting the output above:
 -   Estimated coefficient: The estimated coefficient for the US Population is 6.143e-07.
     This represents the estimated change in effective TEP (labor productivity) for one unit increase in the US population
 
--   P-value: Based on the very small p-value(\<2e-16) we can say that both the intercept and the coefficient explained above are statistically significant
+-   P-value: Based on the very small p-value(<2e-16) we can say that both the intercept and the coefficient explained above are statistically significant
 
 -   Residuals: Min residual is roughly -5.93 and max is 8.32 meaning there is variability in the predicted values.
 
