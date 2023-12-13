@@ -80,7 +80,6 @@ It is measured by dividing the total output (the total quantity or value of good
 ## Results
 
 ```{r}
-library(DT)
 merged_data <- merge(Book12, Book10, by = "Year")
 
 knitr::kable(head(merged_data))
