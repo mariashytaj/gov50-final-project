@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Maria Shytaj"
-description: "My final project"
+description: "Discovering the correlation between U.S population and the labour productivity of the country"
 output:
   distill::distill_article:
     self_contained: false
