@@ -1,6 +1,5 @@
 ---
 title: "Gov 50 Final Project"
-output: html_document
 author: "Maria Shytaj"
 description: "Proving Correlation between U.S Population and the Labour Productivity of the Country."
 output:
