@@ -30,11 +30,18 @@ Since I am observing already existing data on the U.S. population and Labor Prod
 Since we are not looking at the effects of one variable on another but rather the extent to which two variables change together we do not have an explanatory variable and an outcome variable in this study.
 
 ```{r}
+options(repos = c(CRAN = "https://cran.r-project.org"))
+
+install.packages("DT")
+
+library(DT)
 library(tidyverse)
 Book10 <- read.csv("book10.csv")
 colnames(Book10) <- c("Year", "U.S_pop")
 
-knitr::kable(head(Book10))
+datatable(Book10, options = list(scrollY = "300px"))
+
+
 ```
 
 ```{r}
@@ -59,7 +66,7 @@ Book12 <- read.csv("Book12.csv")
 Book12 <- subset(Book12, select = -X)
 colnames(Book12) <- c("Year","EffectiveTEP")
 
-knitr::kable(head(Book12))
+datatable(Book12, options = list(scrollY = "300px"))
 ```
 
 ```{r}
@@ -82,7 +89,7 @@ It is measured by dividing the total output (the total quantity or value of good
 ```{r}
 merged_data <- merge(Book12, Book10, by = "Year")
 
-knitr::kable(head(merged_data))
+datatable(merged_data, options = list(scrollY = "300px"))
 ```
 
 ```{r}
@@ -102,15 +109,17 @@ The steepness and the positive slope suggest a strong positive relationship betw
 ```{r}
 reg_model <- lm(EffectiveTEP ~ U.S_pop, data = merged_data)
 
-summary(reg_model)
-
+modelsummary::modelsummary(reg_model,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared", "min.residual", "max.residual"))
 ```
 
 ### Interpreting the regression model
 
 Interpreting the output above:
 
--   Intercept: we have a negative intercept (-4.156e+01) which shows the predicted value of Effective TEP when the US population is 0.
+-   Intercept: we have a negative intercept (-41.565) which shows the predicted value of Effective TEP when the US population is 0.
     In this case, the intercept does not make sense since having a value for labor productivity when the population is 0 doesn't make sense.
 
 -   Estimated coefficient: The estimated coefficient for the US Population is 6.143e-07.
