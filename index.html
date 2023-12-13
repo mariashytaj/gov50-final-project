@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Gov 50 Final Project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Maria Shytaj"]}]}]},{"type":"character","attributes":{},"value":["Proving Correlation between U.S Population and the Labour Productivity of the Country."]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Gov 50 Final Project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Maria Shytaj"]}]}]},{"type":"character","attributes":{},"value":["Proving Correlation between U.S Population and the Labour Productivity of the Country."]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"character","attributes":{},"value":["sentence"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1518,13 +1518,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <h2 id="introduction">Introduction</h2>
-<p>In this project, I plan to examine the extent to which population numbers in the United States of America correlate to the labor productivity of the country. I hypothesize that the correlation between the two variables will be positive and highly significant.
-The big idea behind my hypothesis is that an increase in population results in an increased labor supply, more people with greater skills and talent, increased consumer demand, entrepreneurship, and innovation, all things that positively affect labor productivity. Due to the limitations of these types of studies and the limited access to data to more data, I can’t prove causation but I can prove correlation which is what I will be doing.
-Understanding the relationship between population size and labor productivity can result in better economic policy decisions. It has effects on workforce planning as well since it can help organizations, anticipate and adapt to shifts in productivity. Understanding how changes in population size may affect productivity can provide more information in discussions for social well-being as labor productivity is a key determinant of living standards.</p>
-<h2 id="reaserch-data">Reaserch, Data</h2>
+<p>In this project, I plan to examine the extent to which population numbers in the United States of America correlate to the labor productivity of the country.
+I hypothesize that the correlation between the two variables will be positive and highly significant.
+The big idea behind my hypothesis is that an increase in population results in an increased labor supply, more people with greater skills and talent, increased consumer demand, entrepreneurship, and innovation, all things that positively affect labor productivity.
+Due to the limitations of these types of studies and the limited access to data, I can’t prove causation but I can prove correlation which is what I will be doing.</p>
+<p>Understanding the relationship between population size and labor productivity can result in better economic policy decisions.
+It has effects on workforce planning as well since it can help organizations, anticipate and adapt to shifts in productivity.
+Understanding how changes in population size may affect productivity can provide more information in discussions for social well-being as labor productivity is a key determinant of living standards.</p>
+<h2 id="research-data">Research, Data</h2>
 <p>Credits: My data for the the US population numbers through out many years comes from “<a href="https://usafacts.org/data/topics/people-society/population-and-demographics/population-data/population/" class="uri">https://usafacts.org/data/topics/people-society/population-and-demographics/population-data/population/</a>”.
 My data for labur productivety throughout the years comes from “<a href="https://www.epi.org/productivity-pay-gap/#" class="uri">https://www.epi.org/productivity-pay-gap/#</a>:~:text=From%201979%20to%202020%2C%20net,(after%20adjusting%20for%20inflation).”.</p>
-<p>Since I am observing already existing data on the U.S. population and Labor Productivity without manipulating the variables but simply looking at their relationship and how much they correlate with each other my study is just an observational study (due to this being an observational study it can’t establish causation but it can prove some level of correlation which is what I will be focusing on). Since we are not looking at the effects of one variable on another but rather the extent to which two variables change together we do not have an explanatory variable and an outcome variable in this study.</p>
+<p>Since I am observing already existing data on the U.S. population and Labor Productivity without manipulating the variables but simply looking at their relationship and how much they correlate with each other my study is just an observational study (due to this being an observational study it can’t establish causation but it can prove some level of correlation which is what I will be focusing on).
+Since we are not looking at the effects of one variable on another but rather the extent to which two variables change together we do not have an explanatory variable and an outcome variable in this study.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -2049,7 +2054,8 @@ My data for labur productivety throughout the years comes from “<a href="https
 <h3 id="us-population-variable">US population variable</h3>
 <p>My data is taken from USA Facts which took the data from the Census Bureau the government agency in charge of counting the entire US population.
 The data set presented in the table and the graph above is the data that shows the U.S population throughout the years.
-As shown by the graph above the data points are clustered in a way that forms a trend line with a constant positive slope. There are no obvious outliers present therefore we can come to the overall conclusion that the US population has grown constantly since 1900.</p>
+As shown by the graph above the data points are clustered in a way that forms a trend line with a constant positive slope.
+There are no obvious outliers present therefore we can come to the overall conclusion that the US population has grown constantly since 1900.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -2380,10 +2386,11 @@ As shown by the graph above the data points are clustered in a way that forms a 
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
-<h3 id="labour-productivity-variable">Labour productivity variable</h3>
+<h3 id="labor-productivity-variable">Labor productivity variable</h3>
 <p>The data used above was taken from the Economic Policy Institute website.
-The data set presented above is the one I will be using to get values on the labor productivity of the U.S. throughout the years. First, to explain the values we are looking at, effective TEP stands for total employment productivity which is what I will be using as values of labor productivity. It is measured by dividing the total output (the total quantity or value of goods and services produced) by the total labor input (total hours worked by all employees)
-It has a similar distribution to the U.S. population data set with a constant positive increase of TEP throughout the years.</p>
+The data set presented above is the one I will be using to get values on the labor productivity of the U.S. throughout the years.
+First, to explain the values we are looking at, effective TEP stands for total employment productivity which is what I will be using as values of labor productivity.
+It is measured by dividing the total output (the total quantity or value of goods and services produced) by the total labor input (total hours worked by all employees) It has a similar distribution to the U.S. population data set with a constant positive increase of TEP throughout the years.</p>
 <h2 id="results">Results</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2820,22 +2827,27 @@ F-statistic:  8627 on 1 and 73 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h3 id="interpreting-the-regression-model">Interpreting the regression model</h3>
 <p>Interpreting the output above:</p>
 <ul>
-<li><p>Intercept: we have a negative intercept (-4.156e+01) which shows the predicted value of Effective TEP when the US population is 0. In this case, the intercept does not make sense since having a value for labor productivity when the population is 0 doesn’t make sense.</p></li>
-<li><p>Estimated coefficient:
-The estimated coefficient for the US Population is 6.143e-07. This represents the estimated change in effective TEP (labor productivity) for one unit increase in the US population</p></li>
-<li><p>P-value:
-Based on the very small p-value(&lt;2e-16) we can say that both the intercept and the coefficient explained above are statistically significant</p></li>
-<li><p>Residuals:
-Min residual is roughly -5.93 and max is 8.32 meaning there is variability in the predicted values.</p></li>
-<li><p>R-squared:
-Multiple R-squared: 0.9916, Adjusted R-squared: 0.9915
-as shown by the values above the value of R squared is very high meaning it explains about 99.16% of the variance in effective TEP values.</p></li>
+<li><p>Intercept: we have a negative intercept (-4.156e+01) which shows the predicted value of Effective TEP when the US population is 0.
+In this case, the intercept does not make sense since having a value for labor productivity when the population is 0 doesn’t make sense.</p></li>
+<li><p>Estimated coefficient: The estimated coefficient for the US Population is 6.143e-07.
+This represents the estimated change in effective TEP (labor productivity) for one unit increase in the US population</p></li>
+<li><p>P-value: Based on the very small p-value(&lt;2e-16) we can say that both the intercept and the coefficient explained above are statistically significant</p></li>
+<li><p>Residuals: Min residual is roughly -5.93 and max is 8.32 meaning there is variability in the predicted values.</p></li>
+<li><p>R-squared: Multiple R-squared: 0.9916, Adjusted R-squared: 0.9915 as shown by the values above the value of R squared is very high meaning it explains about 99.16% of the variance in effective TEP values.</p></li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>The linear regression model indicates strong support for the hypothesis that there is a significant relationship between the U.S. population variable and the Efficient ETP variable. As explained above the estimated coefficient shows that a unit increase in the US population is associated with a 6.143e-07 increase in effective TEP. Looking at the small value of p we can say that the intercept and the coefficient are statistically significant, meaning that the estimated values for both parameters are unlikely to have occurred by random chance, indicating a high level of confidence that the observed relationship between the two variables is not due to luck/randomness. The high R squared value indicates that the model explains a big proportion of the variance in effective TEP, in this case, 99.16% of the variability in the variable (Effective TEP) is explained by the variable (US population). Simply this means that the high R squared value suggests that the linear regression model does a great job of explaining the patterns in the data. There is a strong relationship between the two variables. However it is important to know that this does not imply causation because other factors we did not account for can affect TEP, we would need an experiment (with treatments )to prove causation.
+<p>The linear regression model indicates strong support for the hypothesis that there is a significant relationship between the U.S. population variable and the Efficient ETP variable.
+As explained above the estimated coefficient shows that a unit increase in the US population is associated with a 6.143e-07 increase in effective TEP.
+Looking at the small value of p we can say that the intercept and the coefficient are statistically significant, meaning that the estimated values for both parameters are unlikely to have occurred by random chance, indicating a high level of confidence that the observed relationship between the two variables is not due to luck/randomness.
+The high R squared value indicates that the model explains a big proportion of the variance in effective TEP, in this case, 99.16% of the variability in the variable (Effective TEP) is explained by the variable (US population).
+Simply this means that the high R squared value suggests that the linear regression model does a great job of explaining the patterns in the data.
+There is a strong relationship between the two variables.
+However it is important to know that this does not imply causation because other factors we did not account for can affect TEP, we would need an experiment (with treatments )to prove causation.
 To address some limitations this study has and take this study to the next level, including other variables that can affect the outcome to result in the way that was explained above (committed and confounding variables) can be helpful if we want to look at the causation relationship between the variables.
-In the future, if similar studies are conducted I suggest taking data points about the US population and Effective TEP only in one year rather than multiple years to reduce the influence of potential confounding variables since throughout the years the country’s economic state can change drastically which can affect labor productivity making it harder to prove causation between the variables. This might be difficult to conduct but not impossible with the right access to information.
-In conclusion, this project/study aimed to examine the relationship between labor productivity and the size of the US population throughout the years and the regression analysis showed a statistically significant correlation between the variables. Understanding the correlation between the two variables can be helpful when making economic policies or helping businesses predict or expect the labor productivity they will face based on the patterns of the U.S. population.</p>
+In the future, if similar studies are conducted I suggest taking data points about the US population and Effective TEP only in one year rather than multiple years to reduce the influence of potential confounding variables since throughout the years the country’s economic state can change drastically which can affect labor productivity making it harder to prove causation between the variables.
+This might be difficult to conduct but not impossible with the right access to information.
+In conclusion, this project/study aimed to examine the relationship between labor productivity and the size of the US population throughout the years and the regression analysis showed a statistically significant correlation between the variables.
+Understanding the correlation between the two variables can be helpful when making economic policies or helping businesses predict or expect the labor productivity they will face based on the patterns of the U.S. population.</p>
 <p>=</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
