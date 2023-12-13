@@ -1,5 +1,6 @@
 ---
 title: "Gov 50 Final Project"
+output: html_document
 author: "Maria Shytaj"
 description: "Proving Correlation between U.S Population and the Labour Productivity of the Country."
 output:
@@ -122,6 +123,7 @@ summary_table <- modelsummary::modelsummary(
   gof_map = c("nobs", "r.squared", "adj.r.squared")
 )
 summary_table
+
 ```
 
 ### Interpreting the regression model
