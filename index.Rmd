@@ -30,16 +30,11 @@ Since I am observing already existing data on the U.S. population and Labor Prod
 Since we are not looking at the effects of one variable on another but rather the extent to which two variables change together we do not have an explanatory variable and an outcome variable in this study.
 
 ```{r}
-options(repos = c(CRAN = "https://cran.r-project.org"))
-
-install.packages("DT")
-
-library(DT)
 library(tidyverse)
 Book10 <- read.csv("book10.csv")
 colnames(Book10) <- c("Year", "U.S_pop")
 
-datatable(Book10, options = list(scrollY = "300px"))
+knitr::kable(head(Book10))
 ```
 
 ```{r}
@@ -48,7 +43,6 @@ ggplot(Book10, aes(x = Year, y = U.S_pop)) +
   geom_point() +
   labs(x = "Year", y = "U.S Population") +
   ggtitle("U.S Population Over Time")
-
 ```
 
 ### US population variable
@@ -60,12 +54,12 @@ There are no obvious outliers present therefore we can come to the overall concl
 
 ```{r}
 library(tidyverse)
-library(DT)
+
 Book12 <- read.csv("Book12.csv")
 Book12 <- subset(Book12, select = -X)
 colnames(Book12) <- c("Year","EffectiveTEP")
 
-datatable(Book12, options = list(scrollY = "300px"))
+knitr::kable(head(Book12))
 ```
 
 ```{r}
@@ -89,7 +83,7 @@ It is measured by dividing the total output (the total quantity or value of good
 library(DT)
 merged_data <- merge(Book12, Book10, by = "Year")
 
-datatable(merged_data, options = list(scrollY = "300px"))
+knitr::kable(head(merged_data))
 ```
 
 ```{r}
