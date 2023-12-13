@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Maria Shytaj"
-description: "Discovering the correlation between U.S population and the labour productivity of the country"
+description: "Proving correlation between U.S Population and the Labour Productivity of the country"
 output:
   distill::distill_article:
     self_contained: false
